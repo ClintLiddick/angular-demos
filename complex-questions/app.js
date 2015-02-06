@@ -1,13 +1,11 @@
 angular.module('app', ['ngMockE2E'])
     .controller('FormController', function (inspectionService) {
-        console.log('instantiating FormController');
         var self = this;
 
-        self.dummy = "dummy value";
+        self.IR = inspectionService.inspectionRequestModel;
 
         self.questions = {};
         self.answers = [];
-
         inspectionService.getQuestions()
             .then(function (questions) {
                 self.questions = questions;
@@ -21,6 +19,8 @@ angular.module('app', ['ngMockE2E'])
     })
     .service('inspectionService', function ($http) {
         var self = this;
+
+        self.inspectionRequestModel = {};
 
         self.getQuestions = function () {
             return $http.get('/questions/5')
