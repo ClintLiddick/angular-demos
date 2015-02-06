@@ -1,0 +1,6 @@
+<form class="form">
+    <label>{{formCtrl.questions["q1"]}}</label>
+    <select name="q1" ng-model="model.q1" ng-options="ans.id as ans.label for ans in formCtrl.answers">
+        <option value=""></option>
+    </select>
+</form>
