@@ -53,11 +53,11 @@ angular.module('app', ['ngMockE2E'])
 
         self.getQuestions = function () {
             return {
-                q1: 'Question 1',
-                q2: 'Question 2',
-                q3: 'Question 3',
-                q4: 'Question 4',
-                q5: 'Question 5'
+                q1: 'Question Text 1',
+                q2: 'Question Text 2',
+                q3: 'Question Text 3',
+                q4: 'Question Text 4',
+                q5: 'Question Text 5'
             };
         };
 

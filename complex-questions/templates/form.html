@@ -1,10 +1,38 @@
-<form class="form">
-    <label>{{formCtrl.questions["q1"]}}</label>
-    <select name="q1" ng-model="formCtrl.IR.q1" ng-options="ans.id as ans.label for ans in formCtrl.answers">
-        <option value=""></option>
-    </select>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="q1" class="col-lg-2 control-label">{{formCtrl.questions["q1"]}}</label>
+        <div class="col-lg-2">
+            <select class="form-control" id="q1" ng-model="formCtrl.IR.q1.answer"
+                    ng-options="ans.id as ans.label for ans in formCtrl.answers">
+                <option value="">No Issue</option>
+            </select>
+        </div>
+        <div class="col-lg-5 col-lg-offset-3">
+            <textarea class="form-control" ng-if="formCtrl.IR.q1" ng-model="formCtrl.IR.q1.comment"></textarea>
+        </div>
+    </div>
 
-    <p>
-        {{formCtrl.IR}}
-    </p>
+    <div class="form-group">
+        <label for="q2" class="col-lg-2 control-label">{{formCtrl.questions["q2"]}}</label>
+        <div class="col-lg-2">
+            <select class="form-control" id="q2" ng-model="formCtrl.IR.q2.answer"
+                    ng-options="ans.id as ans.label for ans in formCtrl.answers">
+                <option value="">No Issue</option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <div class="checkbox">
+                <label ng-if="formCtrl.IR.q2">
+                    <input type="checkbox" ng-model="formCtrl.IR.q2.repaired">
+                    Repaired at Inspection
+                </label>
+            </div>
+        </div>
+        <div class="col-lg-5 col-lg-offset-1">
+            <textarea class="form-control" ng-if="formCtrl.IR.q2" ng-model="formCtrl.IR.q2.comment"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <p>{{formCtrl.IR}}</p>
+    </div>
 </form>
